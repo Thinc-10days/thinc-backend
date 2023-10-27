@@ -3,10 +3,10 @@ import { HydratedDocument } from 'mongoose';
 import { Point } from './point.schema';
 import { Food } from './food.schema';
 
-export type ShopDocument = HydratedDocument<Shop>;
+export type ProductDocument = HydratedDocument<Product>;
 
 @Schema()
-export class Shop {
+export class Product {
   @Prop()
   name: string;
 
@@ -26,6 +26,6 @@ export class Shop {
   food: Food[];
 }
 
-export const ShopSchema = SchemaFactory.createForClass(Shop);
+export const ProductSchema = SchemaFactory.createForClass(Product);
 
-ShopSchema.index({ position: '2dsphere' });
+ProductSchema.index({ position: '2dsphere' });
